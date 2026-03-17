@@ -35,6 +35,16 @@ print("cursor 取得成功")
 # 3. 透過 cursor 將 sql 送給 azure sql server 執行
 cursor.execute("select * from stocks")
 
+# 4. 取得查詢結果 存入 records list[]中
+records = cursor.fetchall()  
+
+rec_count = len( records) #計算筆數
+
+print(f'總共查詢到 {rec_count} 筆資料')
+
+cursor.close()
+connect.close()
+
 
 
 
